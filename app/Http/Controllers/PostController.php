@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         //2525 puerto env
         //información de los usuarios
-        $users =  User::latest();
+        $users =  User::all();
 
         Mail::to('colombiafreefire2000@gmail.com')
             ->send(new UsersMail($users));
