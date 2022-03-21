@@ -27,16 +27,20 @@ class PostController extends Controller
     {
         //2525 puerto env
         //información de los usuarios
-        $users =  User::all();
+        //para mandar estos datos al correo
+        /* $users =  User::all();
 
         Mail::to('colombiafreefire2000@gmail.com')
             ->send(new UsersMail($users));
-
-            echo "se envio el correo";
-
-
-        return view('users', [
-            'users' => User::latest()->paginate()
+        echo "se envio el correo";
+ */
+        //para mostrar en una vista
+        return view('emails.usersMail', [
+            'infoUsuario' => User::all()
         ]);
+
+       /*  return view('users', [
+            'users' => User::latest()->paginate()
+        ]); */
     }
 }
