@@ -32,6 +32,8 @@ class PostController extends Controller
         Mail::to('colombiafreefire2000@gmail.com')
             ->send(new UsersMail($users));
 
+            echo "se envio el correo";
+
 
         return view('users', [
             'users' => User::latest()->paginate()
